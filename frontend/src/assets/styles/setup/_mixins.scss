@@ -1,0 +1,37 @@
+@mixin from-mobile-layout {
+  @media (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin from-narrow-layout {
+  @media (min-width: $narrow-breakpoint) {
+    @content;
+  }
+}
+
+@mixin from-normal-layout {
+  @media (min-width: $normal-breakpoint) {
+    @content;
+  }
+}
+
+@mixin from-wide-layout {
+  @media (min-width: $wide-breakpoint) {
+    @content;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    pointer-events: none;
+  }
+}
+

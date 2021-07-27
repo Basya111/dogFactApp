@@ -1,0 +1,40 @@
+.fact-app{
+    min-height: 75vh;
+    .facts-header{
+        margin-bottom: 10px;
+        align-items: center;
+
+        &:nth-child(2){
+            padding-right: 130px;
+            margin-bottom: 0;
+        }
+        
+        .dog-img{
+            display: none;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+        
+    }
+    
+}
+
+
+@media (min-width: 580px){
+    .fact-app{
+        .facts-header{
+            
+            &:nth-child(2){
+                padding-right: 130px;
+            }
+
+            .dog-img{
+                display: block;
+                object-fit: contain;
+                margin-right: 10px;
+                width: 140px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+.app {
+  min-height: 100vh;
+}
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-gap: 10px;
+}
+
+.container{
+  padding: 1rem 3.5rem;
+}
+
+.App{
+  min-height: 100vh;
+}

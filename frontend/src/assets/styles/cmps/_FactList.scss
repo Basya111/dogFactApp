@@ -1,0 +1,20 @@
+.fact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    z-index: 10;
+
+    .fact-preview {
+        padding: 5px;
+        box-shadow: 0px 1px 3px 0px #b1b1b1;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        p{
+            margin-bottom: 3px;
+        }
+    }
+}

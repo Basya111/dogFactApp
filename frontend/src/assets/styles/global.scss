@@ -1,0 +1,22 @@
+// Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+
+// Basics
+@import "basics/typography.scss";
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+
+// Pages
+@import "pages/FactPage.scss";
+@import "pages/MyFacts.scss";
+@import "pages/Home.scss";
+
+
+//Cmps
+@import "cmps/FactList.scss";
+@import "cmps/AppHeader.scss";
+@import "cmps/FactCount.scss";
+@import "cmps/Footer.scss";

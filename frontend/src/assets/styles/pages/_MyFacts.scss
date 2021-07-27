@@ -1,0 +1,35 @@
+.my-facts{
+    min-height: 75vh;
+    .my-facts-header{
+        margin-bottom: 15px;
+        justify-content: center;
+        h3{
+            margin-left: 80px;
+        }
+
+    }
+
+    .dog-img{
+        width: 80px;
+        object-fit: contain;
+
+    }
+}
+
+@media (min-width: 580px){
+    .my-facts{
+        .my-facts-header{
+            
+            h3{
+                margin-left: 110px;
+            }
+            
+        }
+        .dog-img{
+            width: 105px;
+            object-fit: contain;
+    
+        }
+    }
+
+}
