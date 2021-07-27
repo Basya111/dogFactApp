@@ -23,4 +23,4 @@ You will also see any lint errors in the console.
 * User can select number of shown facts (Dog facts)
 * User can remove facts from MyFacts
 
-My Facts are saved in the cookie, in different browsers 
+My Facts are saved in the cookie
