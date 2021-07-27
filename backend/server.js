@@ -42,8 +42,8 @@ app.delete('/api/fact/:factId', async (req, res) => {
     const { factId } = req.params
     await factService.remove(factId)
     let facts = req.cookies.facts || []
-    const copyFacts = facts.filter(currFact => currFact.id !== factId)
-    res.cookie('facts', copyFacts)
+    const filterdFacts = facts.filter(currFact => currFact.id !== factId)
+    res.cookie('facts', filterdFacts)
     res.send('Removed Success')
 })
 
@@ -51,8 +51,8 @@ app.delete('/api/fact/:factId', async (req, res) => {
 //ADD SINGLE fact
 app.post('/api/fact', async (req, res) => {
     const fact = req.body;
-    let facts = req.cookies.facts || [];
     const savedFact = await factService.save(fact)
+    let facts = req.cookies.facts || [];
     const copyFacts = [...facts, savedFact]
     res.cookie('facts', copyFacts)
     res.send(savedFact)

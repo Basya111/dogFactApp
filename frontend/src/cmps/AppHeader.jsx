@@ -6,7 +6,6 @@ export const AppHeader = () => {
 
     const [isMenuOpen, setMenuOpen] = useState(false)
     const history = useHistory()
-    const pointer = { cursor: 'pointer' };
 
     const onToggleMenu = () => {
         setMenuOpen(!isMenuOpen)
@@ -26,7 +25,7 @@ export const AppHeader = () => {
                     <Link to="/dog-fact" >Dog Facts</Link>
                     <Link to="/my-facts" >My Facts</Link>
                 </nav>
-                <MenuIcon onClick={onToggleMenu} style={pointer} className="menu-btn" />
+                <MenuIcon onClick={onToggleMenu} className="menu-btn" className="menu-btn" />
             </header>
         </>
     )

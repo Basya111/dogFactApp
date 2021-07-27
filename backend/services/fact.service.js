@@ -1,5 +1,5 @@
 const fs = require('fs')
-const gFacts = require('../data/db.json')
+const gFacts = require('../data/factDB.json')
 
 
 module.exports = {
@@ -40,5 +40,5 @@ function save(fact) {
 }
 
 function _savefactsToFile() {
-    fs.writeFileSync('data/db.json', JSON.stringify(gFacts, null, 2))
+    fs.writeFileSync('data/factDB.json', JSON.stringify(gFacts, null, 2))
 }

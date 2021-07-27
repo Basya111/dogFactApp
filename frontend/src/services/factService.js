@@ -22,27 +22,27 @@ async function query(num) {
     return facts
 }
 
-function queryFav() {
-    return httpService.get(`fact`)
+async function queryFav() {
+    return await httpService.get(`fact`)
 }
 
-function remove(factId) {
-    return httpService.delete(`fact/${factId}`)
+async function remove(factId) {
+    return await httpService.delete(`fact/${factId}`)
 
 }
-function save(fact) {
+async function save(fact) {
     const factToSave = {id: makeId(), txt: fact}
-    return httpService.post('fact', factToSave)
+    return await httpService.post('fact', factToSave)
 }
 
-function getItemById(factId) {
-    return httpService.get(`fact/${factId}`)
+async function getItemById(factId) {
+    return await httpService.get(`fact/${factId}`)
 }
 
 
 async function getFacts(num) {
     const url = `/facts?number=${num}`
-    // const url = `https://dog-api.kinduff.com/api/facts?number=${num}`
+    // const url = `https://dog-api.kinduff.com/api/facts?number=${num}` // was blocked
     const res = await axios.get(url);
     return res.data.facts;
 }

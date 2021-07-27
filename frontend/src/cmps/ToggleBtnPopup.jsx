@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const ToggleBtnPopup = ({ msg, onToggleFact, fact, btnContent }) => {
+export const ToggleBtnPopup = ({ fact, listProps }) => {
   const [state, setState] = useState({
     open: false,
     vertical: 'top',
@@ -22,7 +22,7 @@ export const ToggleBtnPopup = ({ msg, onToggleFact, fact, btnContent }) => {
 
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
-    onToggleFact(fact)
+    listProps.onToggleFact(fact)
   };
 
   const handleClose = () => {
@@ -32,12 +32,12 @@ export const ToggleBtnPopup = ({ msg, onToggleFact, fact, btnContent }) => {
 
   return (
     <div>
-      <Button onClick={handleClick({ vertical: 'top', horizontal: 'center' })} size="small" variant="outlined" color='primary'>{btnContent}</Button>
+      <Button onClick={handleClick({ vertical: 'top', horizontal: 'center' })} size="small" variant="outlined" color='primary'>{listProps.btnContent}</Button>
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
         open={open}
         onClose={handleClose}
-        message={msg}
+        message={listProps.msg}
         key={vertical + horizontal}
         autoHideDuration={3000}
         action={

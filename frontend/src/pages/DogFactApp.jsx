@@ -12,7 +12,6 @@ export const DogFactApp = () => {
     const { facts} = useSelector(state => state.factModule)
     const dispatch = useDispatch()
     const [factsAmount, setAmount] = useState(30)
-    const isMyFacts = false
 
     useEffect(() => {
         dispatch(loadFacts(factsAmount))
@@ -27,6 +26,13 @@ export const DogFactApp = () => {
         setAmount(factsAmount)
     }
 
+    const listProps = {
+        btnContent: 'save',
+        msg: 'Added to My Facts!',
+        onToggleFact: addToMyFacts,
+        isMyFacts: false
+    }
+
 
     if (!facts.length) return <Loader />
     return (
@@ -38,7 +44,7 @@ export const DogFactApp = () => {
                     <FactAmount onSetAmout={onSetAmout} />
                 </div>
             </div>
-            <FactList facts={facts} onAddToMyFacts={addToMyFacts} isMyFact={isMyFacts} />
+            <FactList facts={facts} onAddToMyFacts={addToMyFacts} listProps={listProps}/>
         </section>
     )
 }

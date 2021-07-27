@@ -7,7 +7,6 @@ export const MyFacts = (props) => {
 
     const { myFacts } = useSelector(state => state.factModule)
     const dispatch = useDispatch()
-    const isMyFacts = true
 
     useEffect(() => {
         dispatch(loadFavFacts())
@@ -17,13 +16,20 @@ export const MyFacts = (props) => {
         dispatch(removeFact(fact.id))
     }
 
+    const listProps = {
+        btnContent: 'remove',
+        msg: 'Fact removed successfully!',
+        onToggleFact: removeFromMyFacts,
+        isMyFacts: true
+    }
+
     return (
         <section className="my-facts container">
             <div className="my-facts-header flex align-center">
                 <h3>My Facts</h3>
                 <img className="dog-img" src={require(`../assets/img/dog1.jpg`).default} alt="" />
             </div>
-            <FactList facts={myFacts} isMyFacts={isMyFacts} onRemoveFromMyFacts={removeFromMyFacts} />
+            <FactList facts={myFacts} onRemoveFromMyFacts={removeFromMyFacts} listProps={listProps}/>
         </section>
     )
 }
