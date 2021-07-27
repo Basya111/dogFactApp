@@ -24,6 +24,7 @@ function getById(factId) {
 }
 
 function remove(factId) {
+    console.log(gFacts);
     const idx = gFacts.findIndex(fact => fact.id === factId)
     if (idx >= 0) {
         gFacts.splice(idx, 1)

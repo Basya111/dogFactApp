@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import Tooltip from '@material-ui/core/Tooltip';
 
 export const FactAmount = ({onSetAmout}) => {
 
@@ -17,8 +18,10 @@ export const FactAmount = ({onSetAmout}) => {
     return (
         <div className="count-facts">
             <form onSubmit={changeAmount}>
-                <input type="numer" value={amount} onChange={handleChange} name="amount" />
+                <input type="numer" value={amount} onChange={handleChange} name="amount" placeholder="number of facts..."/>
+                <Tooltip title={`Get ${amount} facts`} aria-label="add">
                 <button className="set-btn">GO!</button>
+                </Tooltip>
             </form>
         </div>
     )

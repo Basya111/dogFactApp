@@ -29,7 +29,9 @@ export const MyFacts = (props) => {
                 <h3>My Facts</h3>
                 <img className="dog-img" src={require(`../assets/img/dog1.jpg`).default} alt="" />
             </div>
-            <FactList facts={myFacts} onRemoveFromMyFacts={removeFromMyFacts} listProps={listProps}/>
+            {myFacts.length? 
+            <FactList facts={myFacts} onRemoveFromMyFacts={removeFromMyFacts} listProps={listProps}/> : 
+            <p>You didn't save any facts</p>}
         </section>
     )
 }

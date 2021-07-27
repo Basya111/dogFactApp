@@ -10,7 +10,17 @@
 
     img{
         object-fit: contain;
-        width: 61vh;
+        width: 61vw;
         margin: 15px 0 15px 15px;
     }
+}
+
+
+@media (min-width: 580px){
+    .home{
+        img{
+            width: 61vh; 
+        }
+    }
+
 }

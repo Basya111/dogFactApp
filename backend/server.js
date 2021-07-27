@@ -10,6 +10,8 @@ const http = require('http').createServer(app)
 
 const factService = require('./services/fact.service.js')
 
+const memoryStore = {}
+
 const session = expressSession({
     secret: 'coding is amazing',
     resave: false,
@@ -40,7 +42,6 @@ app.get('/api/fact', async (req, res) => {
 //DELETE SINGLE fact
 app.delete('/api/fact/:factId', async (req, res) => {
     const { factId } = req.params
-    await factService.remove(factId)
     let facts = req.cookies.facts || []
     const filterdFacts = facts.filter(currFact => currFact.id !== factId)
     res.cookie('facts', filterdFacts)
@@ -51,11 +52,10 @@ app.delete('/api/fact/:factId', async (req, res) => {
 //ADD SINGLE fact
 app.post('/api/fact', async (req, res) => {
     const fact = req.body;
-    const savedFact = await factService.save(fact)
     let facts = req.cookies.facts || [];
-    const copyFacts = [...facts, savedFact]
+    const copyFacts = [...facts, fact]
     res.cookie('facts', copyFacts)
-    res.send(savedFact)
+    res.send(fact)
 })
 
 
