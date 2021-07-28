@@ -12,6 +12,7 @@ export const AppHeader = () => {
     }
 
     const goHome = () => {
+        setMenuOpen(!isMenuOpen)
         history.push('/')
     }
 
